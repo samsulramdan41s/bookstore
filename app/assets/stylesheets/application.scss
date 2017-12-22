@@ -17,23 +17,23 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
+body, body > p, body > ol, body > ul, body > td {margin: 10px !important}
 
 #banner {
   position: relative;
-  min-height: 40px;
-  background: #9c9;
+  min-height: 65px;
+  background: #eeeeee;
   padding: 10px;
-  border-bottom: 2px solid;
+  border-bottom: 4px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: #39a9a9;
   text-align: center;
 
   img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 192px;
+    top: -10px;
+    left: 50px;
+    width: 200px;
   }
 }
 
@@ -61,8 +61,9 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
   }
 
   #side {
-    padding: 3em 7em 1em 1em;
-    background: #141;
+    padding: 1em 3em;
+    background: #63bdbd;
+    max-width: 300px;
 
     form, div {
       display: inline;
@@ -74,24 +75,26 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
     #cart {
       font-size: smaller;
-      color: white;
+      color: #064848;
       table {
         border-top:
-        1px dotted #595;
-        border-bottom: 1px dotted #595;
+        1px dotted #39a9a9;
+        border-bottom: 1px dotted #39a9a9;
         margin-bottom: 10px;
       }
     }
 
     ul {
       padding: 0;
-
+      min-width: 200px;
+      margin: 0;
       li {
         list-style: none;
 
         a {
-          color: #bfb;
+          color: #000;
           font-size: small;
+          text-decoration: none;
         }
       }
     }
@@ -154,6 +157,22 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
   padding-left: 15px;
   margin: 20px 0;
   border-radius: 4px;
+}
+
+form input[type=submit], form input[type=button], form button{
+  border-radius: 200px;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 7px 16px 6px;
+  text-decoration: none;
+  background-color: #e7e7e7;
+  color: #63bebd;
+  background-image: none;
+  text-shadow: none;
 }
 
 @media all and (max-width: 800px) {

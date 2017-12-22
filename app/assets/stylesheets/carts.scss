@@ -5,9 +5,10 @@
   .item_price, .total_line {
     text-align: right;
   }
-  
+
   .total_line .total_cell {
     font-weight: bold;
-    border-top: 1px solid #595;
+    border-top: 1px solid #39a9a9;
+    padding-top: 5px;
   }
 }

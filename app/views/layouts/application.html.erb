@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Online Books Store</title>
+    <title>The Mission Book Store</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,19 +10,14 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+      <%= image_tag 'logo.png', alt: 'The Mission Book Store' %>
       <span class="title"><%= @page_title %></span>
     </div>
 
     <div id="columns">
       <div id="side">
-        <ul>
-          <li><a href="http://www....">Home</a></li>
-          <li><a href="http://www..../faq">Questions</a></li>
-          <li><a href="http://www..../news">News</a></li>
-          <li><a href="http://www..../contact">Contact</a></li>
-        </ul>
-
+        <%= render 'layouts/side_menu' %>
+        <br><br>
         <div id="cart">
           <% if @cart %>
             <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
