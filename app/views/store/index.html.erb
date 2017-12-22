@@ -5,6 +5,9 @@
 
 <h1>Your Favorite Book</h1>
 <br />
+<div class="row">
+  <%= paginate @books %>
+</div>
 <% cache @books do %>
   <% @books.each do |book| %>
     <% cache book do %>
