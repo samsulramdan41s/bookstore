@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="center jumbotron">
+
+</div>
+
+<h1>Your Favorite Book</h1>
+<br />
+<% cache @books do %>
+  <% @books.each do |book| %>
+    <% cache book do %>
+      <div class="col-sm-3 col-md-3">
+        <div class="post">
+          <div class="post-img-content">
+            <%= image_tag(book.image_url, class: 'list_image') %>
+            </div>
+            <div class="content">
+              <div class="author">
+                  Price <%= number_to_currency(book.price) %>
+              </div>
+              <div>
+                  <b><%= book.title %></b><br>
+                  <%= truncate(strip_tags(book.description),length: 150) %>
+              </div>
+              <div>
+                <%= button_to 'Add to Cart', line_items_path(book_id: book) %>
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

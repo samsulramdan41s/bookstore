@@ -15,7 +15,8 @@
  *= require_tree .
  *= require_self
  */
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
 #banner {
@@ -105,7 +106,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 .depot_form {
   fieldset {
     background: #efe;
-    
+
     legend {
       color: #dfd;
       background: #141;
@@ -119,7 +120,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
   }
 
   form {
-    
+
     label {
       width: 10em;
       float: left;
