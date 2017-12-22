@@ -22,7 +22,8 @@
                   <%= truncate(strip_tags(book.description),length: 150) %>
               </div>
               <div>
-                <%= button_to 'Add to Cart', line_items_path(book_id: book) %>
+                <%= button_to 'Add to Cart', line_items_path(book_id: book),
+                  remote: true %>
               </div>
             </div>
         </div>

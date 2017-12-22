@@ -44,6 +44,10 @@ class BooksController < ApplicationController
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
+
+        @books = Book.all
+        ActionCable.server.broadcast 'books',
+          html: render_to_string('store/index', layout: false)
       else
         format.html { render :edit }
         format.json { render json: @book.errors, status: :unprocessable_entity }
