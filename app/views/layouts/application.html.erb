@@ -10,8 +10,10 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= image_tag 'logo.png', alt: 'Libro.fm | Audiobooks for indies' %>
-      <span class="title"><%= @page_title %></span>
+      <%= link_to store_index_url do %>
+        <%= image_tag 'logo.png', alt: 'Libro.fm | Audiobooks for indies' %>
+        <span class="title"><%= @page_title %></span>
+      <% end %>
     </div>
 
     <div id="columns">
