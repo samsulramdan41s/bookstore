@@ -1,7 +1,7 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :superadmin_role, :staff_role, :support_role, :user_role, :password, :password_confirmation
 
-   controller do
+  controller do
     skip_before_action :authorize
   end
 

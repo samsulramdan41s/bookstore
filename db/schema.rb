@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227054910) do
+ActiveRecord::Schema.define(version: 20171229033654) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20171227054910) do
     t.boolean "superadmin_role", default: false
     t.boolean "staff_role", default: false
     t.boolean "support_role", default: false
-    t.boolean "user_role", default: true
+    t.boolean "user_role", default: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
@@ -68,9 +68,11 @@ ActiveRecord::Schema.define(version: 20171227054910) do
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
     t.integer "order_id"
+    t.integer "user_id"
     t.index ["book_id"], name: "index_line_items_on_book_id"
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["user_id"], name: "index_line_items_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -80,6 +82,8 @@ ActiveRecord::Schema.define(version: 20171227054910) do
     t.integer "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,6 +91,7 @@ ActiveRecord::Schema.define(version: 20171227054910) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
 end

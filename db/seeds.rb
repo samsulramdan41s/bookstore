@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Book.delete_all
+AdminUser.delete_all
 Book.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
   description:
     %{<p>

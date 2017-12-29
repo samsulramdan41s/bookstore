@@ -4,6 +4,9 @@ ActiveAdmin.register Cart do
 #
 # permit_params :list, :of, :attributes, :on, :model
 #
+  controller do
+    skip_before_action :authorize
+  end
 # or
 #
 # permit_params do

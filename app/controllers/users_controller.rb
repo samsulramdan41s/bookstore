@@ -1,4 +1,5 @@
 class UsersController < InheritedResources::Base
+  skip_before_action :authorize
   def create
     @user = User.new(user_params)
 
@@ -17,7 +18,7 @@ class UsersController < InheritedResources::Base
 
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.patch(user_params)
         format.html { redirect_to users_url,
           notice: "User #{@user.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
@@ -30,13 +31,14 @@ class UsersController < InheritedResources::Base
   end
 
   def index
-    @users = User.order(:name)
+    # @users = User.order(:name)
+    redirect_to dashboard_url
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+      params.require(:user).permit(:email, :name, :password, :password_confirmation)
     end
 end
 

@@ -6,6 +6,9 @@ ActiveAdmin.register LineItem do
 #
 # or
 #
+  controller do
+    skip_before_action :authorize
+  end
 # permit_params do
 #   permitted = [:permitted, :attributes]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?

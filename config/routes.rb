@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard' => 'dashboard_user#index'
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
